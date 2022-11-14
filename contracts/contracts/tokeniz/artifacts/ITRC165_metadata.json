@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.5.12+commit.29ca5e67"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Interface of the TRC165 standard.  * Implementers can declare support of contract interfaces, which can then be queried by others ({TRC165Checker}).  * For an implementation, see {TRC165}.",
+			"methods": {
+				"supportsInterface(bytes4)": {
+					"details": "Returns true if this contract implements the interface defined by `interfaceId`.      * This function call must use less than 30 000 gas."
+				}
+			}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/tokeniz/trc721.sol": "ITRC165"
+		},
+		"evmVersion": "petersburg",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/tokeniz/trc721.sol": {
+			"keccak256": "0xb9784b6eb0a2b5011027bc3577e1a47cf4eddb8df54e37b2715aa4489843899c",
+			"urls": [
+				"bzz-raw://c53e96531e5206d614da2a2cbd588e93e2c1da8de172a14a2eec63ec368dee7c",
+				"dweb:/ipfs/QmdE59Bcxsdb5MQ6f635oRhRBTU3U5uKSsWiYXRzkMFckf"
+			]
+		}
+	},
+	"version": 1
+}

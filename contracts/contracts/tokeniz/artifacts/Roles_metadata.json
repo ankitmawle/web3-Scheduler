@@ -1,0 +1,39 @@
+{
+	"compiler": {
+		"version": "0.5.12+commit.29ca5e67"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Library for managing addresses assigned to a Role.",
+			"methods": {},
+			"title": "Roles"
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/tokeniz/trc721.sol": "Roles"
+		},
+		"evmVersion": "petersburg",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/tokeniz/trc721.sol": {
+			"keccak256": "0xb9784b6eb0a2b5011027bc3577e1a47cf4eddb8df54e37b2715aa4489843899c",
+			"urls": [
+				"bzz-raw://c53e96531e5206d614da2a2cbd588e93e2c1da8de172a14a2eec63ec368dee7c",
+				"dweb:/ipfs/QmdE59Bcxsdb5MQ6f635oRhRBTU3U5uKSsWiYXRzkMFckf"
+			]
+		}
+	},
+	"version": 1
+}

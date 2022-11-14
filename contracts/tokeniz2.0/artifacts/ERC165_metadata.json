@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.8.6+commit.0e36fba0.mod"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Implementation of the {IERC165} interface. Contracts that want to implement ERC165 should inherit from this contract and override {supportsInterface} to check for the additional interface id that will be supported. For example: ```solidity function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId); } ``` Alternatively, {ERC165Storage} provides an easier to use but more expensive implementation.",
+			"kind": "dev",
+			"methods": {
+				"supportsInterface(bytes4)": {
+					"details": "See {IERC165-supportsInterface}."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"tokeniz2.0/tokenizAdmin_flat.sol": "ERC165"
+		},
+		"evmVersion": "berlin",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"tokeniz2.0/tokenizAdmin_flat.sol": {
+			"keccak256": "0xfc8fb99d7a9183eda7da8fea0d02ad41463788cc38737096cce646fe9793ee0c",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://5827331d020ebc3d6229e8056ae3f665c6827507ae1b6efdf18d02a2a9d569ef",
+				"dweb:/ipfs/QmZReocVniLE9LMBtZmzo8gavbUkptDn5kv8MZgFpEqnJA"
+			]
+		}
+	},
+	"version": 1
+}

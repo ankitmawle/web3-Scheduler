@@ -1,0 +1,142 @@
+{
+	"compiler": {
+		"version": "0.8.6+commit.0e36fba0.mod"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_initiator",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "tokenName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_tokenURI",
+						"type": "string"
+					},
+					{
+						"internalType": "address[]",
+						"name": "_tokensAddresses",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "_amounts",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tracker",
+						"type": "uint256"
+					}
+				],
+				"name": "newTokeniz",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "setOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokeniz",
+				"outputs": [
+					{
+						"internalType": "contract Tokeniz",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/tokeniz/proxy.sol": "proxy"
+		},
+		"evmVersion": "berlin",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/tokeniz/proxy.sol": {
+			"keccak256": "0x7e02caa0efb30914b79652e21f5dad919ae9702dfe2966b65fc27606a32cd122",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://64817e92839fffa66737cb6dfd8e98295e1ba656a08aa26782c7744fe3c8da5b",
+				"dweb:/ipfs/QmWyt9ZvsgHUFhmHFkqiwQuJ1im3pJCgT7Zu3D8UU4LXXg"
+			]
+		},
+		"contracts/tokeniz/tokeniz.sol": {
+			"keccak256": "0x5c9bc2de8b0b6cbf4931b8239e59f23b635d811b9c1db9c71ffa6c62eaf788c4",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://45cf4cb6b836f9c7095524792003c1d76296f1416da88254e499cd30405c1b18",
+				"dweb:/ipfs/QmZbUPwJDCPxFTkrAV2JCCKNsQM5rmkqVm8BqBJweGDSjW"
+			]
+		}
+	},
+	"version": 1
+}

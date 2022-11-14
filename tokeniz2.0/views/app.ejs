@@ -1,0 +1,214 @@
+<div id="particles-js" class="main-container">
+    
+    <aside class="nav-container">
+        <div class="background"></div>
+        
+        <div class="nav">
+            <div onClick="closeNav()" class="close-nav">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="logo">
+                <img class="img-logo" src="img/logo-no-background.png">
+            </div>
+            <hr class="hr-line">
+            <div class="nav-list">
+                <a href="#mint">
+                <ul class="link">   
+                    <i class='fas fa-donate' > </i>
+                    <strong>Mint</strong>
+                    </ul>
+                </a>
+                <a href="#collection">
+                    <ul class="link">
+                        <i class="	fas fa-database"></i>
+                        Collection                    
+                    </ul>
+                </a>
+                <ul class="link">
+                    <i class="	fas fa-database"></i>
+                    Marketplace
+                </ul>
+            </div>
+            <div class="nav-footer">
+                <hr class="hr-line">
+                <div class="nav-list">
+                    <ul class="link">
+                        Documentation
+                    </ul>
+                    <ul class="link">
+                        Contract Address
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </aside>
+
+    <div class="header-container">
+        <div class="header">
+            <div class="left-headings">
+                <div onClick="pinNav()" class="logo-cropped-container link">
+                    <img class="logo-cropped" src="img/logo-cropped.png"></img>
+                </div>
+                <div id="heading" class="heading"> Mint New Tokeniz </div>
+            </div>
+            <div class="right-headings">
+                <a href="javascript0()" onClick="selectChain()">
+                    <div  class="chain link">
+                        Select Chain 
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </a>
+                <div class="vl"></div>
+                <div onClick="connectWallet()" class="wallet link">
+                    Login
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-holder">
+        <div class="background"></div>
+        <div id="main" class="main">
+            <section class="unpinned mint-grid" id="mint">
+                <div class="step-1">
+                    <label for="name">Enter name for your Tokeniz</label>
+                    <br>
+                    <input type="text" value="" placeholder="Wish you ..." id="name">
+
+                </div>
+                <div class="step-2">
+                    <label for="add-button">Enter a private message we should deliver with your tokeniz</label>
+                    <div id="page" class="page page-background hide">
+
+                    </div>
+                    <button id="add-button" class="add-button" onclick="openEditor()">
+                        <i class="fas fa-plus"> </i>Add New Message
+                    </button>
+ 
+                </div>
+                
+                <div class="step-3">
+                    <label for="public-desc">Enter Public Description for your Tokeniz</label>
+                    <br>
+                    <textarea placeholder="Wish you ..." id="public-desc"></textarea>
+                </div>
+                
+                <div class="step-4">
+                    <label for="public-image">Enter Public Image for your Tokeniz</label>
+                    <br>
+                    <input style="background-color: black!important;;" type="file" accept="image/*" id="fileInput" onChange="loadFile()">
+                    <img id="preview" class="preview">
+                    <a href="https://unsplash.com/">
+                        *Dont have a image find it out here
+                    </a>
+                </div>
+                <div class="step-5">
+                    Add crypto Tokens to be Locked
+                    <div id="token"></div> 
+                    <input id="coin" type="number" value="0" min=0>
+                    <hr class="hr-line top-margin ">
+                        <button id="tokenAddButton" onclick="openTokenEditor()" class="add-button">
+                            <i class="fas fa-plus"> </i>
+                            Add other coins
+                        </button>
+                    <div id="coinsImages"></div> 
+                </div>
+                <div onClick="mint()" class="step-6 hover">
+                    Mint
+                    <span id="note" class="note"></span>
+                </div>
+                
+                
+                <div class="main-bottom-padding"></div>
+            </section>
+
+
+            <section class="pinned" id="collection">
+                <div id="collection-grid" class="collection">
+                    
+                </div>
+            </section>
+            <template id="template">
+                <div class="card-container" data-id="{{NFT-Token-ID}}" >
+                    <div class="image-container">
+                        <img class="image" src="{{NFT-Img-Src}}">
+                        <div class="NFT-name">
+                            {{NFT-name}} 
+                        </div>
+                    </div>
+                    <div class="data-container">
+                        <div class="NFT-desc">
+                            <a href="#mint">{{NFT-desc}}</a>
+                        </div>
+                        <div class="Buttons-container">
+                            <div onClick="unpackTokeniz(this)" class="buttons"><i class="fas fa-gift"></i><span class="tooltiptext">Unpack Tokeniz</span></div>
+                            <div onClick="transferTokeniz(this)" class="buttons"><i class="fa-solid fa-paper-plane"></i><span class="tooltiptext">Transfer Tokeniz</span></div>
+                            <div onClick="transferAndUnpackTokeniz(this)" class="buttons"><i class="fa fa-braille"></i><span class="tooltiptext">Transfer and Unpack tokeniz</span></div>
+                            <div onClick="unlockTokeniz(this)" class="buttons"><i class="fa fa-address-card"></i><span class="tooltiptext">View Hidden Content</span></div>
+                            
+                            <div class="address"><input type="string" placeholder="Receiver's address"></div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            
+
+        </div>
+    </div>
+</div>
+
+<div class="bottom-buttons">
+    <div  class="chain link">
+        Select Chain 
+        <i class="fas fa-angle-down"></i>
+    </div>
+    <div class="vl"></div>
+    <div onClick="connectWallet()" class="wallet link">
+        Login
+    </div>
+</div>
+
+<div id="editor" class="editor hide">
+    <div onClick="closeEditor()" class="close-nav">
+        <i class="fas fa-times"></i>
+    </div>
+    <div class="">
+        <div class="desc-container">
+            <textarea placeholder="Wish you ..." id="desc"></textarea>
+        </div>
+        <button class="done-button" onclick="doneEditor()">
+            <i class="fas fa-check"> </i>Done
+        </button>
+    </div>   
+     
+
+    <div id="extra" style="display:none"></div>
+</div>
+
+<div id="tokenEditor" class="editor hide">
+    <div onclick="closeTokenEditor()" class="close-nav">
+        <i class="fas fa-times"></i>
+    </div>
+    <button class="done-button2" onclick="doneAdding()">
+        <i class="fas fa-check"> </i>Done
+    </button>
+    <div style="display:flex;flex-direction: column;flex-wrap: nowrap;align-content: space-between;
+    align-items: center; justify-content: center;">
+        <div class="desc-container2">
+            Tokens Added:-
+            <div id="addedTokens"></div>
+            <hr class="hr-line">
+            <div class="more">
+                Add More Tokens
+                <input onkeyup="updateCoinsDisplay()" id="token-search" title="Address or ENS name" placeholder="Search token by address" type="search"  inputmode="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" pattern="^(0x[a-fA-F0-9]{40})$" >
+                <div id="listTokens" class="listTokens">
+
+                </div>
+            </div>
+        </div>
+
+    </div>   
+
+
+    <div id="extra" style="display:none"></div>
+</div>

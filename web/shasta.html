@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Scheduler</title>
+        <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+        <meta name="theme-color" content="#000000" />
+        <link rel="stylesheet" href="./assets/css/app.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js"></script>
+        <script src="https://unpkg.com/moralis-v1/dist/moralis.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <script src="https://demos.codexworld.com/3rd-party/tinymce-6.0.2/js/tinymce/tinymce.min.js"></script>
+        <script src="./assets/js/main.js"></script>
+        <script src="./assets/js/app.js"></script>
+        <script src="https://kit.fontawesome.com/6662508d02.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <div id="particles-js" class="main-container">
+            <aside class="nav-container">
+                <div class="background"></div>
+                
+                <div class="nav">
+                    <div onClick="closeNav()" class="close-nav">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <div class="logo">
+                        <img class="img-logo" src="./assets/img/logo-no-background.png">
+                    </div>
+                    <hr class="hr-line">
+                    <div class="nav-list">
+                        <a href="#details">
+                        <ul class="link">   
+                            <i class='fas fa-donate' > </i>
+                                Details
+                            </ul>
+                        </a>
+                        <a href="#schedule">
+                            <ul class="link">
+                                <i class="	fas fa-database"></i>
+                                Schedule                    
+                            </ul>
+                        </a>
+                        <a href="#contact">
+                            <ul class="link">
+                                <i class="	fas fa-database"></i>
+                                    contact us
+                            </ul>
+                        </a>
+                    </div>
+                    <div class="nav-footer">
+                        <hr class="hr-line">
+                        <div class="nav-list">
+                            <a href="https://github.com/ankitmawle/scheduler">
+                                <ul class="link">
+                                    Repository
+                                </ul>
+                            </a>
+                            <a href="https://polygonscan.com/address/0xe045E8F13c00150EAE51aBD68C50320e319B5711">
+                                <ul class="link">
+                                    Contract Address
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </aside>
+            <div class="header-container">
+                <div class="header">
+                    <div class="left-headings">
+                        <div onClick="pinNav()" class="logo-cropped-container link">
+                            <img class="logo-cropped" src="./assets/img/logo-no-background.png"></img>
+                        </div>
+                        <div class="heading"> Schedule your NFT transfers here</div>
+                    </div>
+                    <div class="right-headings">
+                        <a href="./index.html" onClick="selectChain()">
+                            <div  class="chain link">
+                                Select Chain 
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                        </a>
+                        <div class="vl"></div>
+                        <div onClick="connectWallet()" class="wallet link">
+                            Login
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-holder">
+                <div class="background"></div>
+                <div id="main" class="main">
+                    <section id="details">
+
+                    </section>
+                    <section id="schedule" class="mint-grid">
+                        <section class="pinned" id="collection">
+                            <div id="collection-grid" class="collection">
+                                
+                            </div>
+                        </section>
+                        <template id="template">
+                            <div class="card-container" data-address="{{NFT-Token-Address}}" data-id="{{NFT-Token-ID}}" >
+                                <div class="image-container">
+                                    <img class="image" src="{{NFT-Img-Src}}">
+                                    <div class="NFT-name">
+                                        {{NFT-name}} 
+                                    </div>
+                                </div>
+                                <div class="data-container">
+                                    <div class="NFT-desc">
+                                        <a href="#mint">{{NFT-desc}}</a>
+                                    </div>
+                                    <div class="Buttons-container">
+                                         <div onClick="scheduleTransfer(this)" class="buttons"><i class="fa fa-calendar" aria-hidden="true"></i><span class="tooltiptext">Schedule</span></div>
+                    
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        
+            
+                    </div>
+                </div>
+            </div>
+            
+
+                    </section>
+                    <section id="contact">
+                    </section>
+                </div>
+            </div>
+        </div>
+       
+        <div class="bottom-buttons">
+            <a href="./index.html">
+            <div  class="chain link">
+                Select Chain 
+                <i class="fas fa-angle-down"></i>
+            </div>
+        </a>
+            <div class="vl"></div>
+            <div onClick="connectWallet()" class="wallet link">
+                Login
+            </div>
+        </div>
+
+        <div class="cover"><div class="board">
+            <div onclick="closeCover()" style="position:absolute;right:15px;top:15px;margin:10px">
+                <i class="fa fa-close"></i></div>
+            <label class="label" for="add">Please enter the receiver's address</label>
+            <input class="input" id="add" type="string" placeholder="Receiver's address" >
+            <label class="label" for="time">Please enter time the send the transaction</label>
+            <input class="input" id="time" type="datetime-local"  > 
+            <button id="scheduleButton" onclick="approve(this)" class="input">
+                Approve Transfer
+        </div></div>
+        
+
+
+
+
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+         <!-- stats.js lib --> 
+         <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+         <script>
+         particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+                },
+                "color": {
+                "value": "#ffffff"
+                },
+                "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                },
+                "image": {
+                    "src": "img/github.svg",
+                    "width": 100,
+                    "height": 100
+                }
+                },
+                "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+                },
+                "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+                },
+                "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+                },
+                "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+                },
+                "modes": {
+                "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                    "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+                }
+            },
+            "retina_detect": true
+            })</script>
+        
+
+
+        <script type="text/javascript">
+            uploadVariables("shasta","TJT34Hpkip1E38ACjJzZjSegd2i2iBVanC",'0',"TRX",0,'./assets/img/tron-trx-logo.svg','tronlink',6)
+            connectWallet()
+            loadNFTs()
+        </script>
+   
+    </body>
+</html>
