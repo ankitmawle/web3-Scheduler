@@ -1956,7 +1956,40 @@ async function closeCover(){
 }
 
 async function loadNFTs(){
-	if(wallet!='tronlink'){
+	if(chain=='aurora'){
+		uri="https://api.covalenthq.com/v1/1313161555/address/"+accountAddress+"/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=false&key=ckey_a6aa25a6340f4cb082bc6b512ba"
+		let response= await fetch(uri,{method:'GET'})
+		let account= await response.json()
+		let tokens=account.data.items
+		for(i of tokens){
+			console.log(i)
+			try{
+				for(j of i.nft_data){
+					var tId= j.token_id;
+					var data={}
+					var metadata=j.external_data
+					console.log(metadata)
+					data["NFT-Token-Address"]=i.contract_address;
+					data["NFT-Token-ID"]=tId;
+					data["NFT-name"]=metadata.name;
+					data["NFT-desc"]='<detail><summary>'+metadata.description.slice(0,30)+'</summary>'+metadata.description+'</detail>';
+					data["NFT-Img-Src"]=metadata.image;
+					const template = document.querySelector('template')
+					str=template.innerHTML
+					for(j in data){
+					var str=str.replace('{{'+j+'}}',data[j])
+					}
+					const grid=document.getElementById("collection-grid")
+					grid.innerHTML =  grid.innerHTML +str
+				}
+			}
+			catch(err){
+				console.log("try", err)
+			}
+		}
+
+	}
+	else if(wallet!='tronlink'){
 		const serverUrl = "https://nap9okyztkjh.usemoralis.com:2053/server";
 		const appId = "JXIvHqKdkFgdOoioW3IcQvwKMajQPKnqqR0n4NZf";
 		Moralis.start({ serverUrl, appId });
