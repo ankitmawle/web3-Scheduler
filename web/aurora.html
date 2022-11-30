@@ -97,7 +97,25 @@
                     <section id="schedule" class="mint-grid">
                         <section class="pinned" id="collection">
                             <div id="collection-grid" class="collection">
-                                
+                                <div id="template0">
+                                    <div class="card-container" data-address="{{NFT-Token-Address}}" data-id="{{NFT-Token-ID}}" >
+                                        <div class="image-container">
+                                            <img class="image" src="./assets/img/no_data.jpg">
+                                            <div class="NFT-name">
+                                                No schedulable NFTs found on shasta Chain
+                                            </div>
+                                        </div>
+                                        <div class="data-container">
+                                            <div class="NFT-desc">
+                                                <a href="https://shasta.tokeniz.tech/app#mint">Click here to mint your own tokeniz</a>
+                                            </div>
+                                            <div class="Buttons-container">
+                                                 <div onClick="scheduleTransfer(this)" class="buttons"><i class="fa fa-calendar" aria-hidden="true"></i><span class="tooltiptext">Schedule</span></div>
+                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </section>
                         <template id="template">
@@ -279,7 +297,7 @@
 
 
         <script type="text/javascript">
-            uploadVariables("aurora","0x5ceb3F7584284571fE8AeE8C79be831Fbdaa7F5E",'0x4E454153',"ETH",0,'./assets/img/aurora.png','metamask',18)
+            uploadVariables("aurora","0x3ecFB9249fA19c904d289b41e6452b9DbDE64E21",'0x4E454153',"ETH",0,'./assets/img/aurora.png','metamask',18)
             connectWallet()
             
         </script>
